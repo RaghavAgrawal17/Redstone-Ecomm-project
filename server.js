@@ -556,7 +556,7 @@ function sendMail(mail, res) {
         }
     });
     var mailOptions = {
-        from: "raghavservermail25@gmail.com",
+        from: <email>,
         to: mail,
         subject: "REDSTONE|Welcomes you to our community",
         html: "<h1>Welcome to redstone community</h1><div><h1>Check out new products</h1><br>" +

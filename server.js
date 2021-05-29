@@ -425,15 +425,15 @@ app.post('/signup',async(req,res) => {
                 const transporter = nodemailer.createTransport({
                     service: 'gmail',
                     auth: {
-                        user: "raghavservermail25@gmail.com",
-                        pass: "XYZpqrs@1234"
+                        user: <email>,
+                        pass: <password>
                     
                     }
                 });
 
                 // send mail with defined transport object
                 const mailOptions = {
-                    from: '"Do not Reply "<raghavservermail25@gmail.com>', 
+                    from: '"Do not Reply "<email>', 
                     to: email, 
                     subject: "Account Verification: Redstone", 
                     html: "<h2>Please click on below link to activate your account</h2>"+
@@ -551,8 +551,8 @@ function sendMail(mail, res) {
     {
         service: "gmail",
         auth: {
-            user: "raghavservermail25@gmail.com",
-            pass: "XYZpqrs@1234"
+            user: <email>,
+            pass: <password>
         }
     });
     var mailOptions = {

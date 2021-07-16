@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" type="image/png" href="Images/calendar.png" />
+    <title>Redstone | Reset Password</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/usm/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="serverFiles/common.js"></script>
+    <style>
+        body {
+            background-image: url("Images/loginBackground.jfif");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;   
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            
+        }
+        #form1 {
+            background-color: rgb(0,0,0,0.7);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loginbox1 mb-5">
+        <div class="row mt-5">
+            <div class="col-md-6 m-auto">
+                <div class="card card-body text-center" id="form1">
+                    <h1 class="mb-3">
+                        <img src="Images/calendar.png" alt="icon" width="15%" />
+                    </h1>
+                    <h2 class="text-white">Forgot Password</h2>
+             
+                    <div class="container-fluid text-center pt-3">
+                        <%- include('partials/messages.ejs'); %>
+                    </div>
+    
+                    <form action="/forgot" method="POST">
+                        <div class="form-group">
+                            <label for="email" class="text-white">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send me a password reset link</button>
+                    </form>
+                    <p class="mt-4 text-white">
+                        Remember your password? <a href="/Loginpage">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('partials/footer.ejs') %>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" type="image/png" href="/Images/calendar.png" />
+    <title>Redstone | Reset Password</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/usm/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="serverFiles/common.js"></script>
+    <style>
+        body {
+            background-image: url("/Images/loginBackground.jfif");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;   
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            
+        }
+        #form1 {
+            background-color: rgb(0,0,0,0.7);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mb-5">
+        <div class="row mt-5">
+            <div class="col-md-6 m-auto">
+                <div class="card card-body text-center" id="form1">
+                    <h1 class="mb-3">
+                        <img src="/Images/calendar.png" alt="icon" width="15%" />
+                    </h1>
+                    <h2 class="text-white">Reset Password</h2>
+    
+                    <div class="container-fluid text-center pt-3">
+                        <%- include('partials/messages.ejs'); %>
+                    </div>
+    
+                    <form action="/reset/<%= id %>"  method="POST">
+                        <div class="form-group">
+                            <label for="password" class="text-white">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password"
+                              value="<%= typeof password != 'undefined' ? password : '' %>" />
+                          </div>
+                          <div class="form-group">
+                            <label for="password2" class="text-white">Confirm Password</label>
+                            <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password"
+                              value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+                          </div>
+                        <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
+                    </form>
+                    <p class="mt-4 text-white">
+                        Remember your password? <a href="/Loginpage">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer.ejs') %>
+
+</body>
+</html>
